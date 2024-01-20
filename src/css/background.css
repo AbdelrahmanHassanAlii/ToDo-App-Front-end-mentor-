@@ -3,6 +3,11 @@
   background-image: url(../../images/bg-mobile-dark.jpg);
   background-size: cover;
 }
+@media (min-width: 768px) {
+  .top {
+    background-image: url(../../images/bg-desktop-dark.jpg);
+  }
+}
 .bottom {
   height: 70vh;
   background-color: var(--very-dark-blue);
