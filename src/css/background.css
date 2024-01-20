@@ -1,0 +1,9 @@
+.top {
+  height: 30vh;
+  background-image: url(../../images/bg-mobile-dark.jpg);
+  background-size: cover;
+}
+.bottom {
+  height: 70vh;
+  background-color: var(--very-dark-blue);
+}
