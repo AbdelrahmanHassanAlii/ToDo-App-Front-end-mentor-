@@ -1,7 +1,11 @@
 :root {
   /* Primary Colors */
   --bright-blue: hsl(220, 98%, 61%);
-  --check-background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  --check-background: linear-gradient(
+    to right,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
 
   /* Light Theme */
   --very-light-gray: hsl(0, 0%, 98%);
@@ -20,6 +24,10 @@
   --very-dark-grayish-blue-darkest: hsl(237, 14%, 26%);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
 
 .App {
   font-family: "Josefin Sans", sans-serif;

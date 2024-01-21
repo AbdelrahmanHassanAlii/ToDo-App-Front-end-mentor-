@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .app-name {
+  color: var(--very-light-gray);
+  font-weight: bold;
+  margin: 0;
+  font-size: 25px;
+}
+
+.header .svg{
+    cursor: pointer;
+}

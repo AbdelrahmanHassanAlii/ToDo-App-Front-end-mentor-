@@ -1,14 +1,24 @@
 .top {
   height: 30vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: -1;
   background-image: url(../../images/bg-mobile-dark.jpg);
   background-size: cover;
 }
+
 @media (min-width: 768px) {
   .top {
     background-image: url(../../images/bg-desktop-dark.jpg);
   }
 }
+
 .bottom {
   height: 70vh;
+  width: 100%;
+  position: fixed;
+  top: 30%;
+  z-index: -1;
   background-color: var(--very-dark-blue);
 }
