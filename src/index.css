@@ -1,10 +1,12 @@
 :root {
   /* Primary Colors */
   --bright-blue: hsl(220, 98%, 61%);
+  --start-color: hsl(192, 100%, 67%);
+  --end-color: hsl(280, 87%, 65%);
   --check-background: linear-gradient(
     to right,
-    hsl(192, 100%, 67%),
-    hsl(280, 87%, 65%)
+    var(--start-color),
+    var(--end-color)
   );
 
   /* Light Theme */
