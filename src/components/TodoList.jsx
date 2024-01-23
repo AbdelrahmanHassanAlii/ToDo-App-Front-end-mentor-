@@ -41,6 +41,21 @@ export default function TodoList() {
     }
   };
 
+  const handleClearCompleted = () => {
+    const completedTodos = todoList.filter(
+      (todo) => todo.status === "completed"
+    );
+    const updatedTodoList = todoList.filter(
+      (todo) => todo.status === "pending"
+    );
+
+    localStorage.setItem("todoList", JSON.stringify(updatedTodoList));
+    setTodoList(updatedTodoList);
+    setCounter(updatedTodoList.length);
+
+    // Optionally, you can also update the counter here
+  };
+
   return (
     <div className="list">
       <ul>
@@ -84,7 +99,7 @@ export default function TodoList() {
           <p>{counter} items left</p>
         </div>
         <div className="right">
-          <p>{counter} items left</p>
+          <p onClick={handleClearCompleted}>Clear Completed</p>
         </div>
       </div>
     </div>

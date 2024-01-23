@@ -83,8 +83,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-weight: lighter;
 }
 
 .list .footer .left {
-    
+  color: var(--dark-grayish-blue);
+}
+
+.list .footer .right {
+  cursor: pointer;
+}
+
+.list .footer .right:hover {
+  cursor: pointer;
+  color: var(--very-light-gray);
+  font-weight: 300;
 }
