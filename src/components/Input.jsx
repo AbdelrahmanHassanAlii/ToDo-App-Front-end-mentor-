@@ -12,17 +12,17 @@ export default function Input() {
     // console.log(todoText);
     if (todoText !== '') {
       // Get the current todoList from local storage
-      const todoListString = localStorage.getItem('todoList');
+      const todoListString = localStorage.getItem("todoList");
       const todoList = JSON.parse(todoListString) || [];
 
-      // Update the todoList with the new todo
-      todoList.push(todoText);
+      // Update the todoList with the new todo object
+      todoList.push({ text: todoText, status: "pending" });
 
       // Save the updated todoList to local storage
-      localStorage.setItem('todoList', JSON.stringify(todoList));
+      localStorage.setItem("todoList", JSON.stringify(todoList));
 
       // Clear the input field
-      setNewTodo('');
+      setNewTodo(``);
     }
   };
 
