@@ -42,9 +42,6 @@ export default function TodoList() {
   };
 
   const handleClearCompleted = () => {
-    const completedTodos = todoList.filter(
-      (todo) => todo.status === "completed"
-    );
     const updatedTodoList = todoList.filter(
       (todo) => todo.status === "pending"
     );
