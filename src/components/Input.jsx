@@ -23,9 +23,6 @@ export default function Input() {
 
       // Clear the input field
       setNewTodo('');
-
-      console.log(todoList);
-
     }
   };
 
