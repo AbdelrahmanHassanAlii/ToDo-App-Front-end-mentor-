@@ -20,6 +20,11 @@
   position: relative;
 }
 
+.todo-card.finished li {
+  text-decoration: line-through;
+  color: var(--dark-grayish-blue);
+}
+
 .list button {
   position: absolute;
   top: 50%;
@@ -71,4 +76,15 @@
   width: 100%;
   height: 1px;
   background-color: var(--very-dark-grayish-blue);
+}
+
+.list .footer {
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list .footer .left {
+    
 }

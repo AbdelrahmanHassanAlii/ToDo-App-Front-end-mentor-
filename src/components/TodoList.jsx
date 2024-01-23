@@ -4,14 +4,26 @@ import "../css/todoList.css";
 export default function TodoList() {
   const [todoList, setTodoList] = useState([]);
 
+  const [counter, setCounter] = useState(0);
+
   useEffect(() => {
     const storedTodoList = localStorage.getItem("todoList");
     if (storedTodoList) {
-      setTodoList(JSON.parse(storedTodoList));
+      const parsedTodoList = JSON.parse(storedTodoList);
+      setTodoList(parsedTodoList);
+
+      // Count the number of un-completed todos
+      const unCompletedCount = parsedTodoList.filter(
+        (todo) => todo.status === "pending"
+      ).length;
+
+      // Update the counter
+      setCounter(unCompletedCount);
     } else {
       setTodoList([]);
+      setCounter(0); // Reset the counter when there's no storedTodoList
     }
-  }, [todoList]);
+  }, [todoList, counter]);
 
   const handleButtonClick = (e) => {
     const updatedTodoList = [...todoList];
@@ -24,6 +36,8 @@ export default function TodoList() {
 
       localStorage.setItem("todoList", JSON.stringify(updatedTodoList));
       setTodoList(updatedTodoList);
+
+      console.log(e.target.parentNode);
     }
   };
 
@@ -31,7 +45,11 @@ export default function TodoList() {
     <div className="list">
       <ul>
         {todoList.map((todo, index) => (
-          <div className="todo-card">
+          <div
+            className={`todo-card ${
+              todo.status === "completed" ? "finished" : ""
+            }`}
+          >
             <button
               id={index}
               className={`button ${
@@ -58,6 +76,17 @@ export default function TodoList() {
           </div>
         ))}
       </ul>
+      <div className="footer">
+        <div className="left">
+          <p>{counter} items left</p>
+        </div>
+        <div className="middle">
+          <p>{counter} items left</p>
+        </div>
+        <div className="right">
+          <p>{counter} items left</p>
+        </div>
+      </div>
     </div>
   );
 }
