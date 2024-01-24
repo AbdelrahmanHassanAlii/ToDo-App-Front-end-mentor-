@@ -3,9 +3,9 @@ import "../css/todoList.css";
 
 export default function TodoList() {
   const [todoList, setTodoList] = useState([]);
-
   const [counter, setCounter] = useState(0);
 
+  //get all the tasks that in local storage
   useEffect(() => {
     const storedTodoList = localStorage.getItem("todoList");
     if (storedTodoList) {
@@ -25,6 +25,7 @@ export default function TodoList() {
     }
   }, [counter, todoList]);
 
+  //handle on click to finish todo activites
   const handleButtonClick = (e) => {
     const updatedTodoList = [...todoList];
     let index = parseInt(e.target.id);
@@ -41,11 +42,11 @@ export default function TodoList() {
     }
   };
 
+  //function handle clear just completed todo
   const handleClearCompleted = () => {
     const updatedTodoList = todoList.filter(
       (todo) => todo.status === "pending"
     );
-
     localStorage.setItem("todoList", JSON.stringify(updatedTodoList));
     setTodoList(updatedTodoList);
     setCounter(updatedTodoList.length);
