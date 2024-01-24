@@ -23,7 +23,7 @@ export default function TodoList() {
       setTodoList([]);
       setCounter(0); // Reset the counter when there's no storedTodoList
     }
-  }, [todoList, counter]);
+  }, [counter, todoList]);
 
   const handleButtonClick = (e) => {
     const updatedTodoList = [...todoList];
@@ -49,9 +49,9 @@ export default function TodoList() {
     localStorage.setItem("todoList", JSON.stringify(updatedTodoList));
     setTodoList(updatedTodoList);
     setCounter(updatedTodoList.length);
-
-    // Optionally, you can also update the counter here
   };
+
+  
 
   return (
     <div className="list">
@@ -93,7 +93,9 @@ export default function TodoList() {
           <p>{counter} items left</p>
         </div>
         <div className="middle">
-          <p>{counter} items left</p>
+          <p >All</p>
+          <p >Active</p>
+          <p >Completed</p>
         </div>
         <div className="right">
           <p onClick={handleClearCompleted}>Clear Completed</p>
