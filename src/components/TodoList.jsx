@@ -51,7 +51,14 @@ export default function TodoList() {
     setCounter(updatedTodoList.length);
   };
 
-  
+  //function to show All TODO
+  const showAll = () => {
+    const all = localStorage.getItem("todoList");
+    if (all) {
+      const parsedAll = JSON.parse(all);
+      setTodoList(parsedAll);
+    }
+  };
 
   return (
     <div className="list">
@@ -93,9 +100,9 @@ export default function TodoList() {
           <p>{counter} items left</p>
         </div>
         <div className="middle">
-          <p >All</p>
-          <p >Active</p>
-          <p >Completed</p>
+          <p onClick={showAll}>All</p>
+          <p>Active</p>
+          <p>Completed</p>
         </div>
         <div className="right">
           <p onClick={handleClearCompleted}>Clear Completed</p>
