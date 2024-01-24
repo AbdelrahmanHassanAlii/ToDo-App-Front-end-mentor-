@@ -60,6 +60,18 @@ export default function TodoList() {
     }
   };
 
+  // function to show only  Completed TODO
+  const showCompleted = () => {
+    const storedTodoList = localStorage.getItem("todoList");
+    if (storedTodoList) {
+      const parsedTodoList = JSON.parse(storedTodoList);
+      const completedTodoList = parsedTodoList.filter(
+        (todo) => todo.status === "completed"
+      );
+      setTodoList(completedTodoList);
+    }
+  };
+
   return (
     <div className="list">
       <ul>
@@ -101,7 +113,7 @@ export default function TodoList() {
         </div>
         <div className="middle">
           <p onClick={showAll}>All</p>
-          <p>Active</p>
+          <p onClick={showCompleted}>Active</p>
           <p>Completed</p>
         </div>
         <div className="right">
