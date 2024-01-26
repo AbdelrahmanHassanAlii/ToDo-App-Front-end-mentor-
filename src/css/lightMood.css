@@ -30,4 +30,11 @@ body.light-mode .todo-card.finished li {
   color: var(--light-grayish-blue);
 }
 
+body.light-mode .list .footer {
+  color: var(--dark-grayish-blue);
+}
 
+body.light-mode .list .footer .middle p:hover,
+body.light-mode .list .footer .right:hover {
+  color: var(--very-dark-blue);
+}
