@@ -12,6 +12,7 @@ body.light-mode .App .bottom {
   background-color: var(--very-light-grayish-blue);
 }
 
-/* body.light-mode{
-    background-color: var(--very-light-gray)
-} */
+body.light-mode .input-area .input {
+  background-color: var(--very-light-gray);
+  color: var(--vary-dark-blue);
+}
