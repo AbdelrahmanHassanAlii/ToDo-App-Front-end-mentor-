@@ -16,3 +16,18 @@ body.light-mode .input-area .input {
   background-color: var(--very-light-gray);
   color: var(--vary-dark-blue);
 }
+
+body.light-mode .list {
+  background-color: var(--very-light-gray);
+  color: var(--very-dark-desaturated-blue);
+}
+
+body.light-mode .list .todo::before {
+  background-color: var(--very-light-grayish-blue);
+}
+
+body.light-mode .todo-card.finished li {
+  color: var(--light-grayish-blue);
+}
+
+
