@@ -1,5 +1,5 @@
 .top {
-  height: 30vh;
+  height: 35vh;
   width: 100%;
   position: fixed;
   top: 0;
@@ -15,10 +15,10 @@
 }
 
 .bottom {
-  height: 70vh;
+  height: 65vh;
   width: 100%;
   position: fixed;
-  top: 30%;
+  top: 35%;
   z-index: -1;
   background-color: var(--very-dark-blue);
 }

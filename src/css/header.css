@@ -8,9 +8,10 @@
   color: var(--very-light-gray);
   font-weight: bold;
   margin: 0;
-  font-size: 25px;
+  font-size: 35px;
+  letter-spacing: 5px;
 }
 
-.header .svg{
-    cursor: pointer;
+.header .svg {
+  cursor: pointer;
 }

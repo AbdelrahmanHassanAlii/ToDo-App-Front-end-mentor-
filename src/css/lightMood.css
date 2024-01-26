@@ -1,0 +1,17 @@
+body.light-mode .top {
+  background-image: url(../../images/bg-mobile-light.jpg);
+}
+
+@media (min-width: 768px) {
+  .top {
+    background-image: url(../../images/bg-desktop-light.jpg);
+  }
+}
+
+body.light-mode .App .bottom {
+  background-color: var(--very-light-grayish-blue);
+}
+
+/* body.light-mode{
+    background-color: var(--very-light-gray)
+} */
