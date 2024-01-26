@@ -52,6 +52,13 @@ export default function TodoList() {
     setCounter(updatedTodoList.length);
   };
 
+  //handle click on cross
+  const del = (index) => {
+    let todoList = JSON.parse(localStorage.getItem("todoList")) || [];
+    todoList.splice(index, 1);
+    localStorage.setItem("todoList", JSON.stringify(todoList));
+  };
+
   //function to show All TODO
   const showAll = () => {
     const all = localStorage.getItem("todoList");
@@ -117,7 +124,7 @@ export default function TodoList() {
             <li key={index} className="todo">
               {todo.text}
             </li>
-            <div className="cross">
+            <div className="cross" id={index} onClick={() => del(index)}>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
                 <path
                   fill="#494C6B"

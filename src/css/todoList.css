@@ -78,6 +78,19 @@
   background-color: var(--very-dark-grayish-blue);
 }
 
+.todo-card .cross {
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 5;
+}
+
 .list .footer {
   padding: 5px 10px;
   text-align: center;
