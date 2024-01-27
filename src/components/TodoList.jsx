@@ -80,14 +80,10 @@ export default function TodoList() {
 
   // function to show only not Completed TODO
   const showActivated = () => {
-    const storedTodoList = localStorage.getItem("todoList");
-    if (storedTodoList) {
-      const parsedTodoList = JSON.parse(storedTodoList);
-      const unCompletedTodoList = parsedTodoList.filter(
-        (todo) => todo.status === "pending"
-      );
-      setTodoList(unCompletedTodoList);
-    }
+    let todosFinished = document.querySelectorAll(".todo-card.finished");
+    todosFinished.forEach((todo) => {
+      todo.style.display = "none";
+    });
   };
 
   return (
