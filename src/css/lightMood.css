@@ -38,3 +38,8 @@ body.light-mode .list .footer .middle p:hover,
 body.light-mode .list .footer .right:hover {
   color: var(--very-dark-blue);
 }
+
+body.light-mode .middle-mobile {
+  background-color: var(--very-light-gray);
+  color: var(--very-dark-blue);
+}

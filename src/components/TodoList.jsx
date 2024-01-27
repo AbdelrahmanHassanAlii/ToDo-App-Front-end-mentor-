@@ -61,7 +61,7 @@ export default function TodoList() {
 
   // fuction to control the color of the middle section
   const updateMiddleTextColor = (color) => {
-    let middleColor = document.querySelectorAll(".middle p");
+    let middleColor = document.querySelectorAll(".control");
 
     //for light-mood
     if (document.body.classList.contains("light-mode")) {
@@ -107,62 +107,82 @@ export default function TodoList() {
   };
 
   return (
-    <div className="list">
-      <ul>
-        {todoList.map((todo, index) => (
-          <div
-            className={`todo-card ${
-              todo.status === "completed" ? "finished" : ""
-            }`}
-          >
-            <button
-              id={index}
-              className={`button ${
+    <>
+      <div className="list">
+        <ul>
+          {todoList.map((todo, index) => (
+            <div
+              className={`todo-card ${
                 todo.status === "completed" ? "finished" : ""
               }`}
-              onClick={handleButtonClick}
             >
-              {todo.status === "completed" ? (
-                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
+              <button
+                id={index}
+                className={`button ${
+                  todo.status === "completed" ? "finished" : ""
+                }`}
+                onClick={handleButtonClick}
+              >
+                {todo.status === "completed" ? (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
+                    <path
+                      fill="none"
+                      stroke="#FFF"
+                      stroke-width="2"
+                      d="M1 4.304L3.696 7l6-6"
+                    />
+                  </svg>
+                ) : (
+                  ""
+                )}
+              </button>
+              <li key={index} className="todo">
+                {todo.text}
+              </li>
+              <div className="cross" id={index} onClick={() => del(index)}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
                   <path
-                    fill="none"
-                    stroke="#FFF"
-                    stroke-width="2"
-                    d="M1 4.304L3.696 7l6-6"
+                    fill="#494C6B"
+                    fill-rule="evenodd"
+                    d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
                   />
                 </svg>
-              ) : (
-                ""
-              )}
-            </button>
-            <li key={index} className="todo">
-              {todo.text}
-            </li>
-            <div className="cross" id={index} onClick={() => del(index)}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
-                <path
-                  fill="#494C6B"
-                  fill-rule="evenodd"
-                  d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
-                />
-              </svg>
+              </div>
             </div>
+          ))}
+        </ul>
+        <div className="footer">
+          <div className="left">
+            <p>{counter} items left</p>
           </div>
-        ))}
-      </ul>
-      <div className="footer">
-        <div className="left">
-          <p>{counter} items left</p>
-        </div>
-        <div className="middle">
-          <p onClick={showAll}>All</p>
-          <p onClick={showActivated}>Active</p>
-          <p onClick={showCompleted}>Completed</p>
-        </div>
-        <div className="right">
-          <p onClick={handleClearCompleted}>Clear Completed</p>
+          <div className="middle">
+            <p onClick={showAll} className="control">
+              All
+            </p>
+            <p onClick={showActivated} className="control">
+              Active
+            </p>
+            <p onClick={showCompleted} className="control">
+              Completed
+            </p>
+          </div>
+          <div className="right">
+            <p onClick={handleClearCompleted}>Clear Completed</p>
+          </div>
         </div>
       </div>
-    </div>
+
+      <div className="middle-mobile">
+        <p onClick={showAll} className="control">
+          All
+        </p>
+        <p onClick={showActivated} className="control">
+          Active
+        </p>
+        <p onClick={showCompleted} className="control">
+          Completed
+        </p>
+      </div>
+    </>
   );
 }
