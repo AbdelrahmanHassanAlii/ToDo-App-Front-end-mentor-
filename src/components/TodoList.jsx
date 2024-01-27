@@ -70,14 +70,12 @@ export default function TodoList() {
 
   // function to show only  Completed TODO
   const showCompleted = () => {
-    const storedTodoList = localStorage.getItem("todoList");
-    if (storedTodoList) {
-      const parsedTodoList = JSON.parse(storedTodoList);
-      const completedTodoList = parsedTodoList.filter(
-        (todo) => todo.status === "completed"
-      );
-      setTodoList(completedTodoList);
-    }
+    let todosNotFinished = document.querySelectorAll(
+      ".todo-card:not(.finished)"
+    );
+    todosNotFinished.forEach((todo) => {
+      todo.style.display = "none";
+    });
   };
 
   // function to show only not Completed TODO
