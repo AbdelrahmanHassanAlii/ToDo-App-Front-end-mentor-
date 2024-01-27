@@ -61,11 +61,10 @@ export default function TodoList() {
 
   //function to show All TODO
   const showAll = () => {
-    const all = localStorage.getItem("todoList");
-    if (all) {
-      const parsedAll = JSON.parse(all);
-      setTodoList(parsedAll);
-    }
+    let todos = document.querySelectorAll(".todo-card");
+    todos.forEach((todo) => {
+      todo.style.display = "block";
+    });
   };
 
   // function to show only  Completed TODO
