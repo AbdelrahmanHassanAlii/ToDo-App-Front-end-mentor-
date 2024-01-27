@@ -69,6 +69,7 @@ export default function TodoList() {
 
   // function to show only  Completed TODO
   const showCompleted = () => {
+    showAll();
     let todosNotFinished = document.querySelectorAll(
       ".todo-card:not(.finished)"
     );
@@ -79,6 +80,7 @@ export default function TodoList() {
 
   // function to show only not Completed TODO
   const showActivated = () => {
+    showAll();
     let todosFinished = document.querySelectorAll(".todo-card.finished");
     todosFinished.forEach((todo) => {
       todo.style.display = "none";
