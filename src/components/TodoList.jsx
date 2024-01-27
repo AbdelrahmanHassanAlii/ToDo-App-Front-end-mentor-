@@ -62,6 +62,15 @@ export default function TodoList() {
   // fuction to control the color of the middle section
   const updateMiddleTextColor = (color) => {
     let middleColor = document.querySelectorAll(".middle p");
+
+    //for light-mood
+    if (document.body.classList.contains("light-mode")) {
+      middleColor.forEach((p) => {
+        p.style.color = "var(--dark-grayish-blue)";
+      });
+    }
+
+    //for dark-mood
     middleColor.forEach((p) => {
       p.style.color = color;
     });
