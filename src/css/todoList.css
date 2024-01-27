@@ -141,5 +141,4 @@
 .list .footer .right:hover {
   cursor: pointer;
   color: var(--very-light-gray);
-  /* font-weight: 300; */
 }

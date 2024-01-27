@@ -59,17 +59,27 @@ export default function TodoList() {
     localStorage.setItem("todoList", JSON.stringify(todoList));
   };
 
+  // fuction to control the color of the middle section
+  const updateMiddleTextColor = (color) => {
+    let middleColor = document.querySelectorAll(".middle p");
+    middleColor.forEach((p) => {
+      p.style.color = color;
+    });
+  };
+
   //function to show All TODO
-  const showAll = () => {
+  const showAll = (e) => {
     let todos = document.querySelectorAll(".todo-card");
     todos.forEach((todo) => {
       todo.style.display = "block";
     });
+    updateMiddleTextColor("var(--light-grayish-blue-dark)");
+    e.target.style.color = "var(--bright-blue)";
   };
 
   // function to show only  Completed TODO
-  const showCompleted = () => {
-    showAll();
+  const showCompleted = (e) => {
+    showAll(e);
     let todosNotFinished = document.querySelectorAll(
       ".todo-card:not(.finished)"
     );
@@ -79,8 +89,8 @@ export default function TodoList() {
   };
 
   // function to show only not Completed TODO
-  const showActivated = () => {
-    showAll();
+  const showActivated = (e) => {
+    showAll(e);
     let todosFinished = document.querySelectorAll(".todo-card.finished");
     todosFinished.forEach((todo) => {
       todo.style.display = "none";
