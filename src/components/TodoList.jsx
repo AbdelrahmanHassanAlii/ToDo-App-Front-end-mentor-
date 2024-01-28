@@ -151,38 +151,46 @@ export default function TodoList() {
             </div>
           ))}
         </ul>
-        <div className="footer">
-          <div className="left">
-            <p>{counter} items left</p>
+        {localStorage.getItem("todoList") &&
+        localStorage.getItem("todoList").length - 2 > 0 ? (
+          <div className="footer">
+            <div className="left">
+              <p>{counter} items left</p>
+            </div>
+            <div className="middle">
+              <p onClick={showAll} className="control">
+                All
+              </p>
+              <p onClick={showActivated} className="control">
+                Active
+              </p>
+              <p onClick={showCompleted} className="control">
+                Completed
+              </p>
+            </div>
+            <div className="right">
+              <p onClick={handleClearCompleted}>Clear Completed</p>
+            </div>
           </div>
-          <div className="middle">
-            <p onClick={showAll} className="control">
-              All
-            </p>
-            <p onClick={showActivated} className="control">
-              Active
-            </p>
-            <p onClick={showCompleted} className="control">
-              Completed
-            </p>
-          </div>
-          <div className="right">
-            <p onClick={handleClearCompleted}>Clear Completed</p>
-          </div>
-        </div>
+        ) : (
+          <h4 className="text-center p-2"> add some thing todo </h4>
+        )}
       </div>
 
-      <div className="middle-mobile">
-        <p onClick={showAll} className="control">
-          All
-        </p>
-        <p onClick={showActivated} className="control">
-          Active
-        </p>
-        <p onClick={showCompleted} className="control">
-          Completed
-        </p>
-      </div>
+      {localStorage.getItem("todoList") &&
+      localStorage.getItem("todoList").length - 2 > 0 ? (
+        <div className="middle-mobile">
+          <p onClick={showAll} className="control">
+            All
+          </p>
+          <p onClick={showActivated} className="control">
+            Active
+          </p>
+          <p onClick={showCompleted} className="control">
+            Completed
+          </p>
+        </div>
+      ) : null}
     </>
   );
 }
