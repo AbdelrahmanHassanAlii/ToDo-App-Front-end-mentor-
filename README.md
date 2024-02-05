@@ -1,6 +1,6 @@
 # Frontend Mentor - ToDo App
 
-![desktop-design-dark todo app](./design/desktop-design-dark)
+![desktop-design-dark todo app](./design/desktop-design-dark.jpg)
 
 ## Welcome!👋
 
