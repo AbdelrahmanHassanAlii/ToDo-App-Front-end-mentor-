@@ -31,7 +31,7 @@ To install and run this project, follow these steps:
 You can run the Live Preview server with the following Link https://abdelrahman-todo-app.netlify.app/
 
 ## Usage
-Here's how you can use this project:
+Here's how you can use this project :
 
 1. Open your web browser.
 2. Navigate to `your local host such a http://localhost:3000`.
